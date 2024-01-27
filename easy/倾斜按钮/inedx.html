@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            margin: 100px;
+            background-color: #87ceeb;
+            text-align: center;
+            color: #fff;
+            outline: none;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px 0;
+            position: relative;
+        }
+
+        .btn::after,
+        .btn::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+        }
+
+        .btn::after {
+            right: -10px;
+            top: 0;
+            background-image: radial-gradient(circle at 10px 10px, transparent 10px, #87ceeb 11px);
+            ;
+        }
+
+        .btn::before {
+            left: -10px;
+            bottom: 0;
+            background-image: radial-gradient(circle at 0 0, transparent 10px, #87ceeb 11px);
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">倾斜按钮</button>
+</body>
+
+</html>

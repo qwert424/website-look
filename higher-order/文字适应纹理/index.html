@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 文字顺应背景纹理 -->
+    <!-- 知识点 通过svg的滤镜效果 -->
+    <div style="margin-bottom: 10px;">
+        文本值：<input type="text">
+        颜色：<input type="color" name="" id="">
+    </div>
+    <svg viewBox="0 0 1600 330" xmlns="http://www.w3.org/2000/svg" width="100%" height="330px">
+        <defs>
+            <!-- 滤镜 -->
+            <filter id="conform">
+                <!-- 文字区背景 -->
+                <!-- <feImage
+                    href="https://img1.baidu.com/it/u=2090919131,3262949507&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=d2a812c35a10e8d1626dc3de496e5caf"
+                    x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="ORIGIN_IMAGE"></feImage> -->
+                <!-- 颜色灰度 -->
+                <!-- <feColorMatrix type="saturate" values="0" in="ORIGIN_IMAGE" result="GARY_IMAGE"></feColorMatrix> -->
+                <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="2" result="turbulence" />
+                <feDisplacementMap in2="GARY_IMAGE" in="SourceGraphic" scale="15" xChannelSelector="R"
+                    yChannelSelector="R" result="TEXTURED_TEXT" />
+                <feImage
+                    href="https://img1.baidu.com/it/u=2090919131,3262949507&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=d2a812c35a10e8d1626dc3de496e5caf"
+                    x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="BG"></feImage>
+                <feColorMatrix in="TEXTURED_TEXT" result="OPACITY_TEXT" type="matrix" values="1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 0.9 0">
+                    ></feColorMatrix>
+                <feBlend in="OPACITY_TEXT" in2="BG" mode="multiply"></feBlend>
+            </filter>
+        </defs>
+
+
+        <image
+            href="https://img1.baidu.com/it/u=2090919131,3262949507&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=d2a812c35a10e8d1626dc3de496e5caf"
+            x="0" y="0" width="100%" height="100%" preserveAspectRatio="none">
+        </image>
+        <text x="50%" y="50%" font-size="8em" font-weight="bold" text-anchor="middle" alignment-baseline="middle"
+            fill="#000" style="filter: url(#conform)">
+            logo
+        </text>
+    </svg>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

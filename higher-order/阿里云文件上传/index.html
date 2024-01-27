@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- 拖拽区域 -->
+    <div class="drag-container">
+        <span><i class="iconfont icon-yunshangchuan myicon"></i>将目录或多个文件拖拽到此进行扫描</span>
+        <span>支持的文件类型: .jpg、.jpeg、.bmp、.webp、.gif、.png</span>
+        <span>每个文件允许的最大尺寸为: 2M</span>
+    </div>
+    <!-- label区域 -->
+    <div class="label-container">
+        <label for="file1">
+            <span class="btn">选择文件</span>
+        </label>
+        <input type="file" multiple id="file1" class="file">
+        <label for="file2">
+            <span class="btn">选择文件夹</span>
+        </label>
+        <input type="file" id="file2" class="file" webkitdirectory mozdirectory odirectory>
+    </div>
+    <!-- 文件展示区域 -->
+    <div class="file-container">
+        <!-- 顶部 -->
+        <div class="top-item">
+            <span>文件名</span>
+            <span>类型</span>
+            <span>大小</span>
+            <span>状态</span>
+            <span>操作</span>
+        </div>
+        <!-- 空状态 -->
+        <div class="empty-container">
+            <i class="iconfont icon-wushuju2 no-data"></i>
+            <span>无数据</span>
+        </div>
+    </div>
+    <div class="statistics-container">
+        <div class="fileNum statistics-item">文件数量：<span>0</span></div>
+        <div class="fileSuccess statistics-item">成功上传：<span>0</span></div>
+        <div class="fileSize statistics-item">文件总大小：<span>0</span>kb</div>
+    </div>
+    <div class="upload-container"><button type="button" class="upload-btn">开始上传</button></div>
+
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>

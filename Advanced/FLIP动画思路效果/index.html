@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color: brown;
+            outline: none;
+            color: #fff;
+            padding: 5px 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            list-style: none;
+        }
+
+        .item {
+            background-color: tomato;
+            width: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">将第一个移动到最后</button>
+    <ul class="container">
+        <li class="item">Lorem.</li>
+        <li class="item">Fuga!</li>
+        <li class="item">Hic.</li>
+        <li class="item">Unde?</li>
+        <li class="item">Officiis.</li>
+    </ul>
+
+    <script>
+        const btn = document.querySelector('.btn')
+        const lis = document.querySelectorAll('.item');
+        const container = document.querySelector('.container');
+        const firstItem = lis[0]
+        const firstTop = getPos(firstItem);
+        console.log('F:', firstTop);
+
+        // 点击事件
+        btn.addEventListener('click', () => {
+            container.insertBefore(firstItem, null);
+            const lastTop = getPos(firstItem);
+            console.log('L:', lastTop);
+            firstItem.style.transform = `translateY(-${lastTop - firstTop}px)`
+            console.log('I:');
+            setTimeout(() => { firstItem.style.transform = 'translateY(0)' }, 1000)
+            raf(() => {
+                firstItem.style.transition = 'all 1s'
+                // firstItem.style.removeProperty('transform')
+                firstItem.style.transform = 'translateY(0)'
+                console.log('play')
+            })
+        })
+
+        // 获取坐标
+        function getPos(dom) {
+            return dom.getBoundingClientRect().top
+        }
+
+        // 动画
+        function raf(callFunc) {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(callFunc)
+            })
+        }
+    </script>
+</body>
+
+</html>

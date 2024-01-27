@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            border: 10px solid;
+            border-image: repeating-linear-gradient(45deg, skyblue 0 10px, transparent 10px 20px) 20;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+            --x: -100px;
+            --y: -100px;
+            mask-image: radial-gradient(circle at var(--x) var(--y), red 50px, transparent 70px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- mask 遮罩效果可以应用于弹幕在动画的人下方 对人进行反遮罩即可  -->
+    <div class="container">
+        <img src="./3041f1e490383b8937a98350964c839f.jpg" alt="">
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        const imgItem = container.querySelector('img');
+        container.addEventListener('mousemove', (e) => {
+            const x = e.pageX - container.offsetLeft;
+            const y = e.pageY - container.offsetTop;
+            imgItem.style.setProperty('--x', `${x}px`);
+            imgItem.style.setProperty('--y', `${y}px`);
+        })
+        container.addEventListener('mouseleave', (e) => {
+            imgItem.style.setProperty('--x', `-100px`);
+            imgItem.style.setProperty('--y', `-100px`);
+        })
+    </script>
+</body>
+
+</html>

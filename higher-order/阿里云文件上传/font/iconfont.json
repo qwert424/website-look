@@ -1,0 +1,30 @@
+{
+  "id": "4046451",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1273256",
+      "name": "删除",
+      "font_class": "icon",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "28228408",
+      "name": "无数据",
+      "font_class": "wushuju2",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "952",
+      "name": "云上传",
+      "font_class": "yunshangchuan",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

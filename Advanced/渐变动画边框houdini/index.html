@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(3, 54, 54);
+        }
+
+        @property --direc {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        .container {
+            --direc: 0deg;
+            width: 200px;
+            height: 300px;
+            border-radius: 5px;
+            margin: 10px auto;
+            background-image: linear-gradient(var(--direc), #d38312, #a83279);
+            position: relative;
+            animation: test 3s infinite;
+        }
+
+        @keyframes test {
+            to {
+                --direc: 360deg
+            }
+        }
+
+        .item {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 280px;
+            background-color: darkslategray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="item"></div>
+    </div>
+
+</body>
+
+</html>

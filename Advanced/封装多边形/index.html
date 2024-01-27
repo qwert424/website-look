@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 350px;
+            height: 350px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    统率： <input type="range" min="0" max="6500" name="" id="Command">
+    魅力：<input type="range" min="0" max="16000" name="" id="charm">
+    武力： <input type="range" min="0" max="30000" name="" id="force">
+    政治： <input type="range" min="0" max="38000" name="" id="politics">
+    智力： <input type="range" min="0" max="52000" name="" id="intelligence">
+    <div id="main" class="main"></div>
+    <!-- 图片多边形基本上可以通过echart实现图标 -->
+    <script src="echarts.js"></script>
+    <script src="./index.js" type="module"></script>
+
+    <!-- echart不能实现的时候就需要我们自己区分装一个组件 去计算出每个数据的参数 通过canvas来画出图 -->
+    <!-- 这个过程是思考、繁琐、且复杂的 需要我们慢慢耐心去计算学习！！！ -->
+</body>
+
+</html>

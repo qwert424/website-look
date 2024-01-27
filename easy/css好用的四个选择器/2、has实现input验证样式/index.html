@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input-item:has(+input[required])::after {
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- :has() css伪元素选择器 内部传入选择器 符合要求的触发 -->
+
+    <span class="input-item">test：</span><input type="text">
+    <span class="input-item">我后面要加上*号因为我是必填的！！！</span> <input required type="text">
+    <span class="input-item">test：</span><input type="text">
+</body>
+
+</html>

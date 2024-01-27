@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: teal;
+        }
+
+        .img1 {
+            width: 300px;
+            height: 300px;
+            -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transition: all 0.5s;
+        }
+
+        .img1:hover {
+            -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+            clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+        }
+
+        /* 效果二 */
+        .img2 {
+            width: 300px;
+            height: 300px;
+            -webkit-clip-path: ellipse(50% 25% at 50% 50%);
+            clip-path: ellipse(50% 25% at 50% 50%);
+            animation: change 0.5s infinite linear;
+        }
+
+        @keyframes change {
+            50% {
+                -webkit-clip-path: ellipse(50% 0% at 50% 50%);
+                clip-path: ellipse(50% 0% at 50% 50%);
+            }
+
+            to {
+                -webkit-clip-path: ellipse(50% 25% at 50% 50%);
+                clip-path: ellipse(50% 25% at 50% 50%);
+            }
+
+        }
+
+        /* 效果三 */
+        .img3 {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: url(./8.jpg) no-repeat center center/100% 100%;
+        }
+
+        .font {
+            position: absolute;
+            color: #fff;
+            font-size: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            -webkit-clip-path: inset(100% 0 0 0);
+            clip-path: inset(100% 0 0 0);
+            animation: change2 3s infinite ease-in-out;
+        }
+
+        @keyframes change2 {
+            50% {
+                -webkit-clip-path: inset(0% 0 0 0);
+                clip-path: inset(0% 0 0 0);
+                transform: translateX(-50%) translateY(10px);
+            }
+
+            to {
+                -webkit-clip-path: inset(100% 0 0 0);
+                clip-path: inset(100% 0 0 0);
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* 效果四 */
+        .container {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .img4,
+        .img5 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+        }
+
+        .img5 {
+            transition: all 2s;
+            -webkit-clip-path: polygon(-15% 0%, -15% 0%, 0% 50%, -15% 100%, -15% 100%);
+            clip-path: polygon(-15% 0%, -15% 0%, 0% 50%, -15% 100%, -15% 100%);
+        }
+
+        .container:hover .img5 {
+            -webkit-clip-path: polygon(0% 0%, 100% 0%, 115% 50%, 115% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 115% 50%, 115% 100%, 0% 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 效果一： -->
+    <img src="./3041f1e490383b8937a98350964c839f.jpg" alt="" class="img1">
+
+    <!-- 效果二 -->
+    <img src="./2.jpg" alt="" class="img2">
+
+    <!-- 效果三 -->
+    <div class="img3">
+        <span class="font">文字裁剪加平移</span>
+    </div>
+
+    <!-- 效果四 -->
+    <div class="container">
+        <img src="./667612f89980a75e1c1c149d53620848 (1).jpg" alt="" class="img4">
+        <img src="./20201031141350.jpg" alt="" class="img5">
+    </div>
+</body>
+
+</html>

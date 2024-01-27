@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fontSize {
+            font-size: 12px;
+            /* transform: scale(0.5);
+            display: block;
+            transform-origin: left top; */
+            /* zoom: 0.5; */
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 最小字号 谷歌有最小字号的限制 12px -->
+    <!-- 可以通过：缩放(块盒、行块盒且注意高度和缩放中心点)、zoom（兼容性）、 -webkit-text-size-adjust:none ;(？？？)、图片替代-->
+    <div>
+        <span class="fontSize">我需要小于12px</span>
+    </div>
+
+</body>
+
+</html>

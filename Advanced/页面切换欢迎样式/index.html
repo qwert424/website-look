@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+            position: fixed;
+            width: 500px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            background-color: rgba(128, 128, 128, 0.487);
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            font-size: 4em;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            letter-spacing: 4px;
+            justify-content: space-around;
+            text-align: center;
+            flex-direction: column;
+            display: none;
+        }
+
+        .modal .btn {
+            outline: none;
+            background-color: slateblue;
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            border-radius: 6px;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal">
+        <span>欢迎回来!</span>
+        <button class="btn">退 出</button>
+    </div>
+
+    <!-- 使用page visibilityChange Api 完成对页面切换的监听 -->
+    <script>
+        const modal = document.querySelector('.modal');
+        if (typeof document.hidden !== "undefined") {
+            eventName = "visibilitychange",
+                properName = 'hidden'
+        } else if (typeof document.msHidden !== 'undefined') {
+            eventName = "msvisibilitychange",
+                properName = 'msHidden'
+        } else if (typeof document.webkitHidden !== 'undefined') {
+            eventName = "webkitvisibilitychange",
+                properName = 'webkitHidden'
+        }
+        document.addEventListener(eventName, () => {
+            if (document[properName]) {
+                // 页面被隐藏
+                console.log("页面被隐藏");
+                // 执行页面隐藏时的操作
+                // ...
+            } else {
+                // 页面被显示
+                console.log("页面被显示");
+                // 执行页面显示时的操作
+                // ...
+                modal.style.display = "flex";
+            }
+        })
+    </script>
+
+</body>
+
+</html>

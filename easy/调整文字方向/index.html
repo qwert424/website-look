@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 书写方向 */
+            writing-mode: vertical-rl;
+        }
+
+        .author {
+            /* 逻辑方向 */
+            margin-block-start: -15px;
+        }
+
+        .all {
+            /* 数字整体 */
+            text-combine-upright: all;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 国际化站点 我们在改变文字方向的时候 我们需要更改margin 此时我们不能用绝对方向 而是要用逻辑方向 也就是 block-start -->
+    <h1>绝句</h1>
+    <p class="author">【作者】杜甫<span class="all">712</span>－<span class="all">770</span></p>
+    <p>【朝代】唐</p>
+    <p>两个黄鹂鸣翠柳,</p>
+    <p>一行白鹭上青天。</p>
+    <p>窗含西岭千秋雪，</p>
+    <p>门泊东吴万里船。</p>
+</body>
+
+</html>

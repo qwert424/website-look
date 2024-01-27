@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 150px;
+            border: 4px solid transparent;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .box::after {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: 100%;
+            height: 100%;
+            border: 4px solid green;
+            animation: clipBorder 1s ease infinite;
+        }
+
+        .box::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: 100%;
+            height: 100%;
+            border: 4px solid green;
+            animation: clipBorder 1s ease 0.5s infinite;
+        }
+
+        @keyframes clipBorder {
+
+            from,
+            to {
+                clip-path: inset(96% 0 0 0);
+                border-color: green;
+            }
+
+            25% {
+                clip-path: inset(0 96% 0 0);
+            }
+
+            50% {
+                clip-path: inset(0 0 96% 0);
+                border-color: brown;
+            }
+
+            75% {
+                clip-path: inset(0 0 0 96%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 本质还是clip-path来对边框进行切割实现的动画效果 -->
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore numquam, tempora soluta optio neque iure.
+        Tempora exercitationem sed, numquam maiores iure adipisci ab nihil quia quae, ipsam, officiis placeat! Animi.
+    </div>
+</body>
+
+</html>

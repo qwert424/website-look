@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: calc(50% - 200px);
+            top: calc(50% - 200px);
+        }
+
+        .item {
+            width: 8px;
+            left: calc(50% - 4px);
+            position: absolute;
+            height: 24px;
+            border-radius: 3px;
+            background-color: #000;
+            transform-origin: 0 200px;
+            transform: rotate(var(--deg, 0deg));
+            animation: changeItem var(--time, 3s) ease var(--delay, 0s) infinite;
+        }
+
+        @keyframes changeItem {
+
+            from,
+            to {
+                background-color: #000;
+                box-shadow: none;
+            }
+
+            50% {
+                background-color: skyblue;
+                box-shadow: 0 0 10px skyblue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item"></div>
+    </div>
+    <script>
+        const box = document.querySelector('.box');
+        // item数量
+        const maxItemCount = 30;
+        const deg = 360 / maxItemCount;
+        for (let i = 0; i < maxItemCount; i++) {
+            const div = document.createElement('div')
+            div.classList.add('item');
+            div.style.setProperty('--deg', `${i * deg}deg`)
+            div.style.setProperty('--time', `${maxItemCount * 0.1}s`)
+            div.style.setProperty('--delay', `${i * 0.05}s`)
+            box.appendChild(div)
+        }
+
+    </script>
+</body>
+
+</html>

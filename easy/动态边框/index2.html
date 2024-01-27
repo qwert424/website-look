@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: brown;
+        }
+
+        .btn {
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            margin: 100px;
+            border-radius: 5px;
+        }
+        .btn::after{
+            content: "";
+            width: calc(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">动态边框</button>
+</body>
+
+</html>

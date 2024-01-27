@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container {
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            background: image-set("https://img2.baidu.com/it/u=1028011339,1319212411&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=34d7ec101bcb6cda7da04a04bb7ad73d" 1x,
+                    "https://img2.baidu.com/it/u=1814561676,2470063876&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=6ece35e69a1c946ad50b7608bccb66c7" 2x) no-repeat center center/contain;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- 如何保持图片清晰度？ -->
+    <!-- 问题：在不同缩放和分辨率下，图片的清晰度会下降。 -->
+    <!-- 怎么解决这个问题？ -->
+    <!-- 1、背景图添加css属性 image-set("url" 1x(dpr)) -->
+    <!-- <div class="container"></div> -->
+    <!-- 2、img 也可以通过srcset -->
+    <!-- <img srcset="
+    https://img2.baidu.com/it/u=1028011339,1319212411&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=34d7ec101bcb6cda7da04a04bb7ad73d 1x,
+    https://img2.baidu.com/it/u=1814561676,2470063876&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=6ece35e69a1c946ad50b7608bccb66c7 2x
+    " alt=""> -->
+
+    <!-- 问题思考 -->
+    <!-- 如果是图片 它不是响应式的进行切换图片 -->
+    <!-- 1、那么就需要封装一个代码 来js控制不同dpr和不同css宽度情况下的图片展示  -->
+    <!-- 2、可以媒体查询、Picture element-->
+    <!-- <picture>
+        <source
+            srcset="https://img2.baidu.com/it/u=1028011339,1319212411&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=34d7ec101bcb6cda7da04a04bb7ad73d"
+            media="(min-width: 600px)" />
+        <img src="https://img2.baidu.com/it/u=1814561676,2470063876&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1705424400&t=6ece35e69a1c946ad50b7608bccb66c7"
+            alt="" />
+    </picture> -->
+</body>
+
+</html>

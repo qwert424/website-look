@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            text-align: center;
+            background-color: #000;
+        }
+
+        .text {
+            /* text-shadow: 0 2px #fff,
+                0 -2px #fff,
+                -2px 2px #fff,
+                2px 2px #fff,
+                -2px 0 #fff,
+                2px 0 #fff; */
+            -webkit-text-stroke: 2px #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 文字描边 主要用到text-shadom("不支持"文字透明) -webkit-text-stroke(兼容性) -->
+    <!-- 关于-webkit-text-stroke居中描边导致的字体变细的解决办法 写一个伪元素 内容和本体一样 绝对定位 覆盖即可 可以通过 data-content  然后content：attr(data-content) 进行动态读取 -->
+    <div class="box">
+        <h1 class="text">我是文字描边</h1>
+    </div>
+</body>
+
+</html>
