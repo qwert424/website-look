@@ -1,0 +1,35 @@
+// 底部状态栏
+
+.container {
+  width: max-content;
+  padding: 1em .5em;
+  display: flex;
+  justify-content: center;
+  background-color: #0c0c0cc9;
+  border: 1px solid #303030;
+  border-radius: 60px;
+  transform-origin: center;
+  margin: 0 auto;
+}
+
+.dock {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dock-item {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin: 0 10px;
+  color: #7e7e7e;
+  background-color: #0c0c0cc9;
+  border: 1px solid #303030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 700ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform-origin: bottom;
+  cursor: pointer;
+}
