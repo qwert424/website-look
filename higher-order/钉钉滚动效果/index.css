@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --base-font-size: 0.0625rem;
+}
+
+@media screen and (max-width: 1440px){
+    :root {
+        --base-font-size: 0.069vw;
+    }
+}
+
+html {
+    font-size: var(--base-font-size);
+}
+
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+
+.other-content{
+    background-color: #008c8c;
+    height: 200vh;
+    min-height: 1864rem;
+}
+
+.container {
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.effect-content {
+    height: 200vh;
+    min-height: 1864rem;
+    background: linear-gradient(to bottom, #000000 45%, #101f30, #131124);
+}
+
+.effect-box {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    min-height: 932rem;
+    perspective: 800rem;
+    overflow: hidden;
+}
+
+.e-square {
+    position: absolute;
+    transform-origin: 50% 50%;
+    border-radius: 10%;
+}
+
+.e-logo {
+    position: absolute;
+    transform-origin: 50% 50%;
+    border-radius: 10rem;
+}
+
+.e-icon-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 50%;
+    width: 1200rem;
+    height: 500rem;
+    transform: translate(-50%, -100rem);
+    display: grid;
+    grid-template-columns: repeat(7, 120rem);
+    grid-template-rows: repeat(2, 120px 15px);
+    grid-gap: 25rem 35rem;
+    grid-auto-rows: 120rem;
+
+    justify-content: center;
+    align-content: center;
+
+    z-index: 10;
+}
+
+.e-icon-box-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    box-shadow: 0 0 20rem rgba(255, 255, 255, 0.5);
+    background-color: rgba(23, 26, 29, 0.9);
+}
+
+.e-icon {
+    position: relative;
+    border-radius: 10rem;
+    background-color: #ab6d6d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.e-icon-text {
+    position: relative;
+    border-radius: 10rem;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.e-icon:hover {
+    box-shadow: 0 0 20rem rgba(255, 255, 255, 0.5)
+}
